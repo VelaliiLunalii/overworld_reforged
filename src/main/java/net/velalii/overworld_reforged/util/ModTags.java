@@ -6,7 +6,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.velalii.overworld_reforged.Overworld_Reforged;
+import net.velalii.overworld_reforged.OverworldReforged;
 
 public class ModTags {
     public static class Blocks {
@@ -21,7 +21,7 @@ public class ModTags {
         public static final TagKey<Block> STRATITE_ORE_REPLACEABLES = tag("stratite_ore_replaceables");
 
         private static TagKey<Block> tag(String name) {
-            return BlockTags.create(new ResourceLocation(Overworld_Reforged.MOD_ID, name));
+            return BlockTags.create(new ResourceLocation(OverworldReforged.MOD_ID, name));
         }
     }
 
@@ -29,7 +29,7 @@ public class ModTags {
         public static final TagKey<Item> HAMMER_OR_MALLET = tag("hammer_or_mallet");
 
         private static TagKey<Item> tag(String name) {
-            return ItemTags.create(new ResourceLocation(Overworld_Reforged.MOD_ID, name));
+            return ItemTags.create(new ResourceLocation(OverworldReforged.MOD_ID, name));
         }
     }
 }

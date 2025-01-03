@@ -7,12 +7,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
-import net.velalii.overworld_reforged.Overworld_Reforged;
+import net.velalii.overworld_reforged.OverworldReforged;
 import net.velalii.overworld_reforged.block.ModBlocks;
 
 public class ModCreativeModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Overworld_Reforged.MOD_ID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, OverworldReforged.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> OVERWORLD_REFORGED_TAB = CREATIVE_MODE_TABS.register(
             "overworld_reforged_tab",

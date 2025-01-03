@@ -11,7 +11,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.velalii.overworld_reforged.entity.custom.OverthiumLaserProjectile;
 import net.velalii.overworld_reforged.particle.ModParticles;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;

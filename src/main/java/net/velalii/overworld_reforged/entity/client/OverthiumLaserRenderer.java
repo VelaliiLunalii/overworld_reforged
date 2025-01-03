@@ -2,31 +2,19 @@ package net.velalii.overworld_reforged.entity.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Axis;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.LivingEntityRenderer;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.projectile.DragonFireball;
-import net.minecraft.world.phys.Vec3;
-import net.velalii.overworld_reforged.Overworld_Reforged;
-import net.velalii.overworld_reforged.entity.custom.DeerEntity;
+import net.velalii.overworld_reforged.OverworldReforged;
 import net.velalii.overworld_reforged.entity.custom.OverthiumLaserProjectile;
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
-import org.joml.Quaternionf;
-
-import static net.minecraft.client.renderer.entity.LivingEntityRenderer.getOverlayCoords;
-import static net.minecraft.util.Mth.cos;
-import static net.minecraft.util.Mth.sin;
 
 public class OverthiumLaserRenderer extends EntityRenderer<OverthiumLaserProjectile> {
-    private static final ResourceLocation TEXTURE_LOCATION = new ResourceLocation(Overworld_Reforged.MOD_ID, "textures/entity/overthium_laser.png");
+    private static final ResourceLocation TEXTURE_LOCATION = new ResourceLocation(OverworldReforged.MOD_ID, "textures/entity/overthium_laser.png");
     private static final RenderType RENDER_TYPE = RenderType.entityCutoutNoCull(TEXTURE_LOCATION);
     public OverthiumLaserRenderer(EntityRendererProvider.Context pContext) {
         super(pContext);

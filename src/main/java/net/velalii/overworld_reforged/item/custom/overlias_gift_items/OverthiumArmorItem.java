@@ -1,5 +1,7 @@
-package net.velalii.overworld_reforged.item.custom;
+package net.velalii.overworld_reforged.item.custom.overlias_gift_items;
 
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
@@ -7,7 +9,6 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.velalii.overworld_reforged.entity.custom.OverthiumLaserProjectile;
-import net.velalii.overworld_reforged.item.IOveliasGiftToggle;
 import net.velalii.overworld_reforged.item.ModItems;
 
 import java.util.ArrayList;
@@ -35,14 +36,16 @@ public class OverthiumArmorItem extends ArmorItem implements IOveliasGiftToggle 
             } else {
                 this.tickCooldown--;
             }
-            if (!level.isClientSide && this.masterSlot == this.getEquipmentSlot().getFilterFlag()) {
-                if (this.laserCooldown >= 20 * (6 - this.powerLevel) && player.swinging) {
-                    this.laserCooldown = 0;
-                    OverthiumLaserProjectile laser = new OverthiumLaserProjectile(level, player, stack);
-                    laser.shootFromRotation(player, player.getXRot(), player.getYRot(), 0F, 1F, 0F);
-                    level.addFreshEntity(laser);
-                } else {
-                    this.laserCooldown++;
+            if (this.masterSlot == this.getEquipmentSlot().getFilterFlag()) {
+                if(!level.isClientSide) {
+                    if (this.laserCooldown >= 20 * (6 - this.powerLevel) && player.swinging) {
+                        this.laserCooldown = 0;
+                        OverthiumLaserProjectile laser = new OverthiumLaserProjectile(level, player, stack);
+                        laser.shootFromRotation(player, player.getXRot(), player.getYRot(), 0F, 2F, 0F);
+                        level.addFreshEntity(laser);
+                    } else {
+                        this.laserCooldown++;
+                    }
                 }
             }
         }

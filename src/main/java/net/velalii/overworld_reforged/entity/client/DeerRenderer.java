@@ -5,7 +5,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.velalii.overworld_reforged.Overworld_Reforged;
+import net.velalii.overworld_reforged.OverworldReforged;
 import net.velalii.overworld_reforged.entity.custom.DeerEntity;
 
 public class DeerRenderer extends MobRenderer<DeerEntity, DeerModel<DeerEntity>>{
@@ -15,7 +15,7 @@ public class DeerRenderer extends MobRenderer<DeerEntity, DeerModel<DeerEntity>>
 
     @Override
     public ResourceLocation getTextureLocation(DeerEntity pEntity) {
-        return new ResourceLocation(Overworld_Reforged.MOD_ID, "textures/entity/deer.png");
+        return new ResourceLocation(OverworldReforged.MOD_ID, "textures/entity/deer.png");
     }
 
     @Override

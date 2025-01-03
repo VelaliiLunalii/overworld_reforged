@@ -13,7 +13,7 @@ import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
-import net.velalii.overworld_reforged.Overworld_Reforged;
+import net.velalii.overworld_reforged.OverworldReforged;
 import net.velalii.overworld_reforged.item.ModItems;
 
 import java.util.LinkedHashMap;
@@ -34,7 +34,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {
-        final String MOD_ID = Overworld_Reforged.MOD_ID; // Change this to your mod id
+        final String MOD_ID = OverworldReforged.MOD_ID; // Change this to your mod id
 
         if(itemRegistryObject.get() instanceof ArmorItem armorItem) {
             trimMaterials.entrySet().forEach(entry -> {
@@ -81,7 +81,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, Overworld_Reforged.MOD_ID, existingFileHelper);
+        super(output, OverworldReforged.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -95,6 +95,6 @@ public class ModItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Overworld_Reforged.MOD_ID,"item/" + item.getId().getPath()));
+                new ResourceLocation(OverworldReforged.MOD_ID,"item/" + item.getId().getPath()));
     }
 }

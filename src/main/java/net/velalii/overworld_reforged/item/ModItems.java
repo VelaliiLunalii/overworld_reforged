@@ -9,16 +9,18 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.velalii.overworld_reforged.Overworld_Reforged;
+import net.velalii.overworld_reforged.OverworldReforged;
 import net.velalii.overworld_reforged.entity.ModEntities;
-import net.velalii.overworld_reforged.item.custom.*;
-import net.velalii.overworld_reforged.item.custom.overlias_gift_items.OverthiumHammerItem;
+import net.velalii.overworld_reforged.item.custom.HammerItem;
+import net.velalii.overworld_reforged.item.custom.MalletItem;
+import net.velalii.overworld_reforged.item.custom.MossCatalystItem;
+import net.velalii.overworld_reforged.item.custom.overlias_gift_items.*;
 
 import java.util.List;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, Overworld_Reforged.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, OverworldReforged.MOD_ID);
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
@@ -31,15 +33,15 @@ public class ModItems {
             () -> new MossCatalystItem(new Item.Properties()));
 
     public static final RegistryObject<Item> OVERTHIUM_SWORD = ITEMS.register("overthium_sword",
-            () -> new SwordItem(ModToolTiers.OVERTHIUM, 3, -2.4F, new Item.Properties()));
+            () -> new OverthiumSwordItem(ModToolTiers.OVERTHIUM, 3, -2.4F, new Item.Properties()));
     public static final RegistryObject<Item> OVERTHIUM_PICKAXE = ITEMS.register("overthium_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.OVERTHIUM, 1, -2.8F, new Item.Properties()));
+            () -> new OverthiumPickaxeItem(ModToolTiers.OVERTHIUM, 1, -2.8F, new Item.Properties()));
     public static final RegistryObject<Item> OVERTHIUM_AXE = ITEMS.register("overthium_axe",
-            () -> new AxeItem(ModToolTiers.OVERTHIUM, 5, -3, new Item.Properties()));
+            () -> new OverthiumAxeItem(ModToolTiers.OVERTHIUM, 5, -3, new Item.Properties()));
     public static final RegistryObject<Item> OVERTHIUM_HOE = ITEMS.register("overthium_hoe",
-            () -> new HoeItem(ModToolTiers.OVERTHIUM, -3, 0, new Item.Properties()));
+            () -> new OverthiumHoeItem(ModToolTiers.OVERTHIUM, -3, 0, new Item.Properties()));
     public static final RegistryObject<Item> OVERTHIUM_SHOVEL = ITEMS.register("overthium_shovel",
-            () -> new ShovelItem(ModToolTiers.OVERTHIUM, 1.5F, -3, new Item.Properties()));
+            () -> new OverthiumShovelItem(ModToolTiers.OVERTHIUM, 1.5F, -3, new Item.Properties()));
 
     public static final RegistryObject<Item> WOODEN_MALLET = ITEMS.register("wooden_mallet",
             () -> new MalletItem(Tiers.WOOD, 4, -2.8F, new Item.Properties(),
@@ -60,7 +62,7 @@ public class ModItems {
             () -> new MalletItem(Tiers.NETHERITE, 4, -2.8F, new Item.Properties(),
                     3, 1/2F, 20));
     public static final RegistryObject<Item> OVERTHIUM_MALLET = ITEMS.register("overthium_mallet",
-            () -> new MalletItem(ModToolTiers.OVERTHIUM, 4, -2.8F, new Item.Properties(),
+            () -> new OverthiumMalletItem(ModToolTiers.OVERTHIUM, 4, -2.8F, new Item.Properties(),
                     3, 1/2F, 20));
 
     public static final RegistryObject<Item> WOODEN_HAMMER = ITEMS.register("wooden_hammer",
@@ -131,18 +133,18 @@ public class ModItems {
         return wm||wh||sm||sh||im||ih||gm||gh||dm||dh||nm||nh||om||oh;
     }
 
-    private static final ResourceLocation EMPTY_SLOT_INGOT = new ResourceLocation(Overworld_Reforged.MOD_ID, "item/empty_slot/ingot");
-    private static final ResourceLocation EMPTY_SLOT_HELMET = new ResourceLocation(Overworld_Reforged.MOD_ID, "item/empty_slot/helmet");
-    private static final ResourceLocation EMPTY_SLOT_CHESTPLATE = new ResourceLocation(Overworld_Reforged.MOD_ID, "item/empty_slot/chestplate");
-    private static final ResourceLocation EMPTY_SLOT_LEGGINGS = new ResourceLocation(Overworld_Reforged.MOD_ID, "item/empty_slot/leggings");
-    private static final ResourceLocation EMPTY_SLOT_BOOTS = new ResourceLocation(Overworld_Reforged.MOD_ID, "item/empty_slot/boots");
-    private static final ResourceLocation EMPTY_SLOT_SWORD = new ResourceLocation(Overworld_Reforged.MOD_ID, "item/empty_slot/sword");
-    private static final ResourceLocation EMPTY_SLOT_PICKAXE = new ResourceLocation(Overworld_Reforged.MOD_ID, "item/empty_slot/pickaxe");
-    private static final ResourceLocation EMPTY_SLOT_AXE = new ResourceLocation(Overworld_Reforged.MOD_ID, "item/empty_slot/axe");
-    private static final ResourceLocation EMPTY_SLOT_HOE = new ResourceLocation(Overworld_Reforged.MOD_ID, "item/empty_slot/hoe");
-    private static final ResourceLocation EMPTY_SLOT_SHOVEL = new ResourceLocation(Overworld_Reforged.MOD_ID, "item/empty_slot/shovel");
-    private static final ResourceLocation EMPTY_SLOT_BLOCK = new ResourceLocation(Overworld_Reforged.MOD_ID, "item/empty_slot/block");
-    private static final ResourceLocation EMPTY_SLOT_MALLET = new ResourceLocation(Overworld_Reforged.MOD_ID, "item/empty_slot/mallet");
+    private static final ResourceLocation EMPTY_SLOT_INGOT = new ResourceLocation(OverworldReforged.MOD_ID, "item/empty_slot/ingot");
+    private static final ResourceLocation EMPTY_SLOT_HELMET = new ResourceLocation(OverworldReforged.MOD_ID, "item/empty_slot/helmet");
+    private static final ResourceLocation EMPTY_SLOT_CHESTPLATE = new ResourceLocation(OverworldReforged.MOD_ID, "item/empty_slot/chestplate");
+    private static final ResourceLocation EMPTY_SLOT_LEGGINGS = new ResourceLocation(OverworldReforged.MOD_ID, "item/empty_slot/leggings");
+    private static final ResourceLocation EMPTY_SLOT_BOOTS = new ResourceLocation(OverworldReforged.MOD_ID, "item/empty_slot/boots");
+    private static final ResourceLocation EMPTY_SLOT_SWORD = new ResourceLocation(OverworldReforged.MOD_ID, "item/empty_slot/sword");
+    private static final ResourceLocation EMPTY_SLOT_PICKAXE = new ResourceLocation(OverworldReforged.MOD_ID, "item/empty_slot/pickaxe");
+    private static final ResourceLocation EMPTY_SLOT_AXE = new ResourceLocation(OverworldReforged.MOD_ID, "item/empty_slot/axe");
+    private static final ResourceLocation EMPTY_SLOT_HOE = new ResourceLocation(OverworldReforged.MOD_ID, "item/empty_slot/hoe");
+    private static final ResourceLocation EMPTY_SLOT_SHOVEL = new ResourceLocation(OverworldReforged.MOD_ID, "item/empty_slot/shovel");
+    private static final ResourceLocation EMPTY_SLOT_BLOCK = new ResourceLocation(OverworldReforged.MOD_ID, "item/empty_slot/block");
+    private static final ResourceLocation EMPTY_SLOT_MALLET = new ResourceLocation(OverworldReforged.MOD_ID, "item/empty_slot/mallet");
     public static final RegistryObject<Item> OVERTHIUM_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("overthium_upgrade_smithing_template", () -> new SmithingTemplateItem(
             Component.translatable("item.overworld_reforged.smithing_template.overthium_upgrade.applies_to").withStyle(ChatFormatting.BLUE),
             Component.translatable("item.overworld_reforged.smithing_template.overthium_upgrade.ingredients").withStyle(ChatFormatting.BLUE),

@@ -7,24 +7,23 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
 import net.velalii.overworld_reforged.entity.custom.OverthiumLaserProjectile;
-import net.velalii.overworld_reforged.item.IOveliasGiftToggle;
 import net.velalii.overworld_reforged.item.ModItems;
-import net.velalii.overworld_reforged.item.custom.HammerItem;
+import net.velalii.overworld_reforged.item.custom.MalletItem;
 
 import java.util.ArrayList;
 
-public class OverthiumHammerItem extends HammerItem implements IOveliasGiftToggle {
+public class OverthiumMalletItem extends MalletItem implements IOveliasGiftToggle {
     private int laserCooldown;
     private boolean oveliasGiftToggle;
-    public OverthiumHammerItem(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties, Float instancedSpeedModifier, int fatigueThreshold) {
-        super(pTier, pAttackDamageModifier, pAttackSpeedModifier, pProperties, instancedSpeedModifier, fatigueThreshold);
+    public OverthiumMalletItem(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties,
+                               int range, Float instancedSpeedModifier, int fatigueThreshold) {
+        super(pTier, pAttackDamageModifier, pAttackSpeedModifier, pProperties, range, instancedSpeedModifier, fatigueThreshold);
         this.laserCooldown = 0;
         this.oveliasGiftToggle = true;
     }
 
     @Override
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
-        System.out.println("tick");
         if(oveliasGiftToggle && !pLevel.isClientSide()) {
             if(pEntity instanceof Player player) {
                 if (player.swinging) {
@@ -32,7 +31,7 @@ public class OverthiumHammerItem extends HammerItem implements IOveliasGiftToggl
                     if (this.laserCooldown >= 20 * (6 - powerLevel)) {
                         this.laserCooldown = 0;
                         OverthiumLaserProjectile laser = new OverthiumLaserProjectile(pLevel, player, pStack);
-                        laser.shootFromRotation(player, player.getXRot(), player.getYRot(), 0F, 1F, 0F);
+                        laser.shootFromRotation(player, player.getXRot(), player.getYRot(), 0F, 2F, 0F);
                         pLevel.addFreshEntity(laser);
                     }
                 } else {

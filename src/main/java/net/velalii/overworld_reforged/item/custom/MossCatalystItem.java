@@ -4,25 +4,19 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.velalii.overworld_reforged.block.ModBlocks;
-import net.velalii.overworld_reforged.entity.custom.OverthiumLaserProjectile;
 
 import java.util.Random;
 
 import static java.lang.Math.*;
 import static net.minecraft.world.level.block.state.properties.BlockStateProperties.FACING;
-import static net.velalii.overworld_reforged.block.ModBlocks.*;
+import static net.velalii.overworld_reforged.block.ModBlocks.LARGE_OVERTHIUM_CRYSTAL;
+import static net.velalii.overworld_reforged.block.ModBlocks.OVERTHIUM_CRYSTAL;
 
 public class MossCatalystItem extends Item {
     public MossCatalystItem(Properties pProperties){

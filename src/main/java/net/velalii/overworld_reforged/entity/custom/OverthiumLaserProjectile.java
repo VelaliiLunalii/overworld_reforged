@@ -1,22 +1,21 @@
 package net.velalii.overworld_reforged.entity.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.AnimationState;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.monster.Blaze;
-import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
-import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.entity.projectile.ThrowableProjectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.TheEndGatewayBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -27,28 +26,16 @@ import net.minecraft.world.phys.Vec3;
 import net.velalii.overworld_reforged.entity.ModEntities;
 import net.velalii.overworld_reforged.particle.ModParticles;
 
-import javax.annotation.Nullable;
-
 public class OverthiumLaserProjectile extends ThrowableProjectile {
     private int life;
-    ItemStack pStack;
-    /*private double prevX;
-    private double prevY;
-    private double prevZ;*/
+
     public OverthiumLaserProjectile(EntityType<? extends ThrowableProjectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-    }
-
-
-    @Override
-    public boolean isNoGravity() {
-        return true;
     }
 
     public OverthiumLaserProjectile(Level pLevel, Entity pShooter, ItemStack pStack, int life) {
         super(ModEntities.OVERTHIUM_LASER.get(), pLevel);
         this.life = life;
-        this.pStack = pStack;
 
         Vec3 pos = pShooter.getEyePosition();
         this.setPos(pos.add(0, -0.2, 0));
@@ -57,11 +44,7 @@ public class OverthiumLaserProjectile extends ThrowableProjectile {
 
     public OverthiumLaserProjectile(Level pLevel, Entity pShooter, ItemStack pStack) {
         super(ModEntities.OVERTHIUM_LASER.get(), pLevel);
-        this.pStack = pStack;
         this.life = 40;
-        /*this.prevX = 0;
-        this.prevY = 0;
-        this.prevZ = 0;*/
 
         Vec3 pos = pShooter.getEyePosition();
         this.setPos(pos.add(0, -0.3, 0));
@@ -70,7 +53,6 @@ public class OverthiumLaserProjectile extends ThrowableProjectile {
 
     @Override
     public void tick() {
-        super.tick();
         HitResult hitresult = ProjectileUtil.getHitResultOnMoveVector(this, this::canHitEntity);
         boolean flag = false;
         if (hitresult.getType() == HitResult.Type.BLOCK) {
@@ -88,7 +70,6 @@ public class OverthiumLaserProjectile extends ThrowableProjectile {
                 flag = true;
             }
         }
-
         if (hitresult.getType() != HitResult.Type.MISS && !flag && !net.minecraftforge.event.ForgeEventFactory.onProjectileImpact(this, hitresult)) {
             this.onHit(hitresult);
         }
@@ -107,14 +88,13 @@ public class OverthiumLaserProjectile extends ThrowableProjectile {
         }
 
         this.setDeltaMovement(vec3);
-
         this.setPos(d2, d0, d1);
 
-        if(this.level().isClientSide){
-            if(this.life == 40){
+        if(this.life ==40){
+            this.level().playSound((Player)null, this.getX(), this.getY(), this.getZ(), SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.NEUTRAL, 5F, this.level().getRandom().nextFloat() * 0.4F + 0.8F);
+        }
 
-            }
-            System.out.println(this.random);
+        if(this.level().isClientSide){
             this.level().addParticle(ModParticles.OVERTHIUM_LASER.get(), this.getX(), this.getY(), this.getZ(), this.getXRot(), this.getYRot(), 0);
         }
 
@@ -127,47 +107,44 @@ public class OverthiumLaserProjectile extends ThrowableProjectile {
         }
     }
 
-    public void shootFromRotation(Entity pShooter, float pX, float pY, float pZ, float pVelocity, float pInaccuracy) {
-        super.shootFromRotation(pShooter, pX, pY, pZ, pVelocity, pInaccuracy);
+    public void onDiscard(){
+        this.level().playSound((Player) null, this.getX(), this.getY(), this.getZ(), SoundEvents.AMETHYST_CLUSTER_BREAK, SoundSource.NEUTRAL, 5F, this.level().getRandom().nextFloat() * 0.4F + 0.8F);
+        if(this.level().isClientSide) {
+            this.level().addParticle(ModParticles.OVERTHIUM_EXPLOSION.get(), this.getX(), this.getY(), this.getZ(), this.getXRot(), this.getYRot(), 0);
+        }
     }
 
     @Override
-    public void shoot(double pX, double pY, double pZ, float pVelocity, float pInaccuracy) {
-        Vec3 vec3 = (new Vec3(pX, pY, pZ)).normalize().scale((double)pVelocity);
-        this.setDeltaMovement(vec3);
-        double d0 = vec3.horizontalDistance();
-        this.setYRot((float)(Mth.atan2(vec3.x, vec3.z) * (double)(180F / (float)Math.PI)));
-        this.setXRot((float)(Mth.atan2(vec3.y, d0) * (double)(180F / (float)Math.PI)));
-        this.yRotO = this.getYRot();
-        this.xRotO = this.getXRot();
+    public boolean isNoGravity() {
+        return true;
     }
 
     public void onHitEntity(EntityHitResult pResult) {
-        super.onHitEntity(pResult);
         Entity entity = pResult.getEntity();
         int i = 4;
-        entity.hurt(this.damageSources().thrown(this, this.getOwner()), (float)i);
-        this.discard();
+        entity.hurt(this.damageSources().thrown(this, this.getOwner()), (float) i);
     }
 
     @Override
     public void onHitBlock(BlockHitResult pResult) {
-        this.discard();
-        super.onHitBlock(pResult);
         Level level = this.level();
-        if (!level.isClientSide) {
+        if (!level.isClientSide && this.getOwner() instanceof Player) {
             BlockPos pos = pResult.getBlockPos();
-            if (pStack.isCorrectToolForDrops(level.getBlockState(pos))) {
+            ItemStack stack = ((Player) this.getOwner()).getItemInHand(InteractionHand.MAIN_HAND);
+            if (stack.isCorrectToolForDrops(level.getBlockState(pos))) {
                 level.destroyBlock(pos, true, this);
             }
         }
+        super.onHitBlock(pResult);
     }
 
     public void onHit(HitResult pResult) {
-        super.onHit(pResult);
+        this.onDiscard();
         if (!this.level().isClientSide) {
+            this.discard();
             this.level().broadcastEntityEvent(this, (byte) 3);
         }
+        super.onHit(pResult);
     }
 
     @Override

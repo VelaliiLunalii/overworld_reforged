@@ -10,20 +10,20 @@ import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.velalii.overworld_reforged.Overworld_Reforged;
-import net.velalii.overworld_reforged.item.IOveliasGiftToggle;
+import net.velalii.overworld_reforged.OverworldReforged;
+import net.velalii.overworld_reforged.item.custom.overlias_gift_items.IOveliasGiftToggle;
 import net.velalii.overworld_reforged.item.ModItems;
 import net.velalii.overworld_reforged.util.KeyBinding;
 
 import java.util.ArrayList;
 
 public class ClientEvents {
-    @Mod.EventBusSubscriber(modid = Overworld_Reforged.MOD_ID, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = OverworldReforged.MOD_ID, value = Dist.CLIENT)
     public static class ClientForgeEvents {
         @SubscribeEvent
         public static void onKeyInput(InputEvent.Key event) {
             if(KeyBinding.OVELIAS_BLESSING_KEY.consumeClick()) {
-                Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed a Key!"));
+                Minecraft.getInstance().player.sendSystemMessage(Component.literal("Toggled Ovelia's gift"));
                 Player player = Minecraft.getInstance().player;
                 ItemStack hand = player.getItemInHand(InteractionHand.MAIN_HAND);
                 ItemStack boots = player.getInventory().getArmor(0);
@@ -52,7 +52,7 @@ public class ClientEvents {
             }
         }
     }
-    @Mod.EventBusSubscriber(modid = Overworld_Reforged.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+    @Mod.EventBusSubscriber(modid = OverworldReforged.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ClientModBusEvents {
         @SubscribeEvent
         public static void onKeyRegister(RegisterKeyMappingsEvent event) {

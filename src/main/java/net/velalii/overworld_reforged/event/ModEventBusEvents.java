@@ -8,15 +8,16 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.velalii.overworld_reforged.Overworld_Reforged;
+import net.velalii.overworld_reforged.OverworldReforged;
 import net.velalii.overworld_reforged.entity.ModEntities;
 import net.velalii.overworld_reforged.entity.custom.DeerEntity;
 import net.velalii.overworld_reforged.particle.ModParticles;
+import net.velalii.overworld_reforged.particle.custom.OverthiumExplosionParticle;
 import net.velalii.overworld_reforged.particle.custom.OverthiumLaserParticle;
+import net.velalii.overworld_reforged.particle.custom.OverthiumShockwaveParticle;
 import net.velalii.overworld_reforged.particle.custom.OverthiumTrailParticle;
 
-@Mod.EventBusSubscriber(modid = Overworld_Reforged.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = OverworldReforged.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event){
@@ -35,5 +36,9 @@ public class ModEventBusEvents {
                 OverthiumTrailParticle.Provider::new);
         Minecraft.getInstance().particleEngine.register(ModParticles.OVERTHIUM_LASER.get(),
                 OverthiumLaserParticle.Provider::new);
+        Minecraft.getInstance().particleEngine.register(ModParticles.OVERTHIUM_EXPLOSION.get(),
+                OverthiumExplosionParticle.Provider::new);
+        Minecraft.getInstance().particleEngine.register(ModParticles.OVERTHIUM_SHOCKWAVE.get(),
+                OverthiumShockwaveParticle.Provider::new);
     }
 }

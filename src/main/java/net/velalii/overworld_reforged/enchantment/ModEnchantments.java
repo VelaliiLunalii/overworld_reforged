@@ -7,11 +7,11 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.velalii.overworld_reforged.Overworld_Reforged;
+import net.velalii.overworld_reforged.OverworldReforged;
 
 public class ModEnchantments {
     public static final DeferredRegister<Enchantment> ENCHANTMENTS =
-            DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, Overworld_Reforged.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, OverworldReforged.MOD_ID);
 
     public static final RegistryObject<Enchantment> ENDURANCE =
             ENCHANTMENTS.register("endurance",

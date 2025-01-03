@@ -10,7 +10,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
@@ -27,7 +26,7 @@ public class OverthiumTrailParticle extends TextureSheetParticle {
         this.xd =0;
         this.yd =0;
         this.zd =0;
-        this.lifetime = 10;
+        this.lifetime = 6;
         this.gravity = 0F;
         this.quadSize *= 1;
         this.friction = 0;

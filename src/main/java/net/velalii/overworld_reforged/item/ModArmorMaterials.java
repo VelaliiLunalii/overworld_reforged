@@ -5,7 +5,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.velalii.overworld_reforged.Overworld_Reforged;
+import net.velalii.overworld_reforged.OverworldReforged;
 
 import java.util.function.Supplier;
 
@@ -62,7 +62,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return Overworld_Reforged.MOD_ID + ":" + this.name;
+        return OverworldReforged.MOD_ID + ":" + this.name;
     }
 
     @Override

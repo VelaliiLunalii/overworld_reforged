@@ -4,21 +4,19 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.PickaxeItem;
-import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
 import net.velalii.overworld_reforged.entity.custom.OverthiumLaserProjectile;
-import net.velalii.overworld_reforged.item.IOveliasGiftToggle;
 import net.velalii.overworld_reforged.item.ModItems;
 
 import java.util.ArrayList;
 
-public class OverthiumPickaxeItem extends PickaxeItem implements IOveliasGiftToggle {
+public class OverthiumShovelItem extends ShovelItem implements IOveliasGiftToggle {
     private int laserCooldown;
     private boolean oveliasGiftToggle;
 
-    public OverthiumPickaxeItem(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
+    public OverthiumShovelItem(Tier pTier, float pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
         super(pTier, pAttackDamageModifier, pAttackSpeedModifier, pProperties);
         this.laserCooldown = 0;
         this.oveliasGiftToggle = true;
@@ -34,7 +32,7 @@ public class OverthiumPickaxeItem extends PickaxeItem implements IOveliasGiftTog
                     if (this.laserCooldown >= 20 * (6 - powerLevel)) {
                         this.laserCooldown = 0;
                         OverthiumLaserProjectile laser = new OverthiumLaserProjectile(pLevel, player, pStack);
-                        laser.shootFromRotation(player, player.getXRot(), player.getYRot(), 0F, 1F, 0F);
+                        laser.shootFromRotation(player, player.getXRot(), player.getYRot(), 0F, 2F, 0F);
                         pLevel.addFreshEntity(laser);
                     }
                 } else {

@@ -6,13 +6,13 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.velalii.overworld_reforged.Overworld_Reforged;
+import net.velalii.overworld_reforged.OverworldReforged;
 import net.velalii.overworld_reforged.entity.custom.DeerEntity;
 import net.velalii.overworld_reforged.entity.custom.OverthiumLaserProjectile;
 
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPE =
-            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Overworld_Reforged.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, OverworldReforged.MOD_ID);
 
     public static final RegistryObject<EntityType<DeerEntity>> DEER =
             ENTITY_TYPE.register("deer", () -> EntityType.Builder.of(DeerEntity::new, MobCategory.CREATURE)

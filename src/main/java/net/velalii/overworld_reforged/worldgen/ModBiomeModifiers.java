@@ -10,7 +10,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.velalii.overworld_reforged.Overworld_Reforged;
+import net.velalii.overworld_reforged.OverworldReforged;
 
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_STRATITE_PATCH = registerKey("add_stratite_patch");
@@ -27,7 +27,7 @@ public class ModBiomeModifiers {
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {
-        return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(Overworld_Reforged.MOD_ID,
+        return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(OverworldReforged.MOD_ID,
                 name));
     }
 }

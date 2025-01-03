@@ -6,7 +6,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.velalii.overworld_reforged.Overworld_Reforged;
+import net.velalii.overworld_reforged.OverworldReforged;
 import net.velalii.overworld_reforged.worldgen.ModBiomeModifiers;
 import net.velalii.overworld_reforged.worldgen.ModConfiguredFeatures;
 import net.velalii.overworld_reforged.worldgen.ModPlacedFeatures;
@@ -21,6 +21,6 @@ public class ModWorldGenProvider extends DatapackBuiltinEntriesProvider {
             .add(ForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap);
 
     public ModWorldGenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-        super(output, registries, BUILDER, Set.of(Overworld_Reforged.MOD_ID));
+        super(output, registries, BUILDER, Set.of(OverworldReforged.MOD_ID));
     }
 }
