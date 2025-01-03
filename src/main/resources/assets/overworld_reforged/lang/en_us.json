@@ -1,0 +1,67 @@
+{
+  "item.overworld_reforged.overthium_ingot": "Overthium Ingot",
+  "item.overworld_reforged.overthium_shard": "Overthium Shard",
+  "item.overworld_reforged.moss_catalyst": "Moss Catalyst",
+  "item.overworld_reforged.overthium_upgrade_smithing_template": "Overthium Upgrade Smithing Template",
+  "item.overworld_reforged.hammer_upgrade_smithing_template": "Hammer Upgrade Smithing Template",
+
+  "item.overworld_reforged.overthium_sword": "Overthium Sword",
+  "item.overworld_reforged.overthium_pickaxe": "Overthium Pickaxe",
+  "item.overworld_reforged.overthium_axe": "Overthium Axe",
+  "item.overworld_reforged.overthium_hoe": "Overthium Hoe",
+  "item.overworld_reforged.overthium_shovel": "Overthium Shovel",
+
+  "item.overworld_reforged.wooden_mallet": "Wooden Mallet",
+  "item.overworld_reforged.stone_mallet": "Stone Mallet",
+  "item.overworld_reforged.iron_mallet": "Iron Mallet",
+  "item.overworld_reforged.golden_mallet": "Golden Mallet",
+  "item.overworld_reforged.diamond_mallet": "Diamond Mallet",
+  "item.overworld_reforged.netherite_mallet": "Netherite Mallet",
+  "item.overworld_reforged.overthium_mallet": "Overthium Mallet",
+
+  "item.overworld_reforged.wooden_hammer": "Wooden Hammer",
+  "item.overworld_reforged.stone_hammer": "Stone Hammer",
+  "item.overworld_reforged.iron_hammer": "Iron Hammer",
+  "item.overworld_reforged.golden_hammer": "Golden Hammer",
+  "item.overworld_reforged.diamond_hammer": "Diamond Hammer",
+  "item.overworld_reforged.netherite_hammer": "Netherite Hammer",
+  "item.overworld_reforged.overthium_hammer": "Overthium Hammer",
+
+  "item.overworld_reforged.overthium_helmet": "Overthium Helmet",
+  "item.overworld_reforged.overthium_chestplate": "Overthium Chestplate",
+  "item.overworld_reforged.overthium_leggings": "Overthium Leggings",
+  "item.overworld_reforged.overthium_boots": "Overthium Boots",
+
+  "item.overworld_reforged.deer_spawn_egg": "Deer Spawn Egg",
+
+  "upgrade.overworld_reforged.overthium_upgrade": "Overthium Upgrade",
+  "item.overworld_reforged.smithing_template.overthium_upgrade.applies_to": "Iron Equipement",
+  "item.overworld_reforged.smithing_template.overthium_upgrade.ingredients": "Overthium Ingot",
+  "item.overworld_reforged.smithing_template.overthium_upgrade.base_slot_description": "Add iron armor, weapon, or tool",
+  "item.overworld_reforged.smithing_template.overthium_upgrade.additions_slot_description": "Add Overthium Ingot",
+
+  "upgrade.overworld_reforged.hammer_upgrade": "Hammer Upgrade",
+  "item.overworld_reforged.smithing_template.hammer_upgrade.applies_to": "Any Mallet",
+  "item.overworld_reforged.smithing_template.hammer_upgrade.ingredients": "Matching material block",
+  "item.overworld_reforged.smithing_template.hammer_upgrade.base_slot_description": "Add any mallet",
+  "item.overworld_reforged.smithing_template.hammer_upgrade.additions_slot_description": "Add Matching Material Block",
+
+  "block.overworld_reforged.stratite": "Stratite",
+  "block.overworld_reforged.cracked_stratite": "Cracked Stratite",
+  "block.overworld_reforged.overthium_block": "Overthium Block",
+  "block.overworld_reforged.polished_overthium_block": "Polished Overthium Block",
+  "block.overworld_reforged.overthium_crystal": "Overthium Crystal",
+
+  "tooltip.overworld_reforged.mallet.start": "Mines ",
+  "tooltip.overworld_reforged.mallet.end": " blocks in a straight line",
+  "tooltip.overworld_reforged.hammer": "Mines blocks in a 3x3 area",
+
+  "effect.overworld_reforged.fatigue": "Fatigue",
+
+  "enchantment.overworld_reforged.endurance": "Endurance",
+
+  "key.category.overworld_reforged": "Overworld Reforged",
+  "key.overworld_reforged.ovelias_blessing": "Ovelia's Blessing",
+
+  "creativetab.overworld_reforged_tab": "Overworld Reforged"
+}

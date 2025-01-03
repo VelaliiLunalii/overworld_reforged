@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "overworld_reforged:overthium_ingot"
+  },
+  "base": {
+    "item": "overworld_reforged:iron_hammer"
+  },
+  "result": {
+    "item": "overworld_reforged:overthium_hammer"
+  },
+  "template": {
+    "item": "overworld_reforged:overthium_upgrade_smithing_template"
+  }
+}

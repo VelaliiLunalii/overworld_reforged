@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "overworld_reforged:overthium_shard"
+    },
+    "C": {
+      "item": "overworld_reforged:stratite"
+    },
+    "S": {
+      "item": "overworld_reforged:overthium_upgrade_smithing_template"
+    }
+  },
+  "pattern": [
+    "#S#",
+    "#C#",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "item": "overworld_reforged:overthium_upgrade_smithing_template"
+  },
+  "show_notification": true
+}

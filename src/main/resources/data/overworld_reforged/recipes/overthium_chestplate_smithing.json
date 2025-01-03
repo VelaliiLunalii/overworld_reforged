@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "overworld_reforged:overthium_ingot"
+  },
+  "base": {
+    "item": "minecraft:iron_chestplate"
+  },
+  "result": {
+    "item": "overworld_reforged:overthium_chestplate"
+  },
+  "template": {
+    "item": "overworld_reforged:overthium_upgrade_smithing_template"
+  }
+}

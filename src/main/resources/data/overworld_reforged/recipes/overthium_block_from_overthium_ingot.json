@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "overworld_reforged:overthium_ingot"
+    }
+  },
+  "result": {
+    "item": "overworld_reforged:overthium_block"
+  }
+}

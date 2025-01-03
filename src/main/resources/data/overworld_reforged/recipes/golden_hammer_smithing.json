@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:gold_block"
+  },
+  "base": {
+    "item": "overworld_reforged:golden_mallet"
+  },
+  "result": {
+    "item": "overworld_reforged:golden_hammer"
+  },
+  "template": {
+    "item": "overworld_reforged:hammer_upgrade_smithing_template"
+  }
+}

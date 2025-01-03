@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "overworld_reforged:overthium_block"
+    }
+  ],
+  "result": {
+    "item": "overworld_reforged:overthium_ingot",
+    "count": 9
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_block"
+  },
+  "base": {
+    "item": "overworld_reforged:iron_mallet"
+  },
+  "result": {
+    "item": "overworld_reforged:iron_hammer"
+  },
+  "template": {
+    "item": "overworld_reforged:hammer_upgrade_smithing_template"
+  }
+}

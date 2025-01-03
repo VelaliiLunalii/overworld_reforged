@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:diamond_block"
+  },
+  "base": {
+    "item": "overworld_reforged:diamond_mallet"
+  },
+  "result": {
+    "item": "overworld_reforged:diamond_hammer"
+  },
+  "template": {
+    "item": "overworld_reforged:hammer_upgrade_smithing_template"
+  }
+}

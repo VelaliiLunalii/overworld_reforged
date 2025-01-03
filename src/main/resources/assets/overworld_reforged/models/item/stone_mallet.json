@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "overworld_reforged:item/mallets/stone_mallet"
+  }
+}

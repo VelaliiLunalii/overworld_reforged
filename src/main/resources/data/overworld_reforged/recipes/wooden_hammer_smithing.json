@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "minecraft:logs"
+  },
+  "base": {
+    "item": "overworld_reforged:wooden_mallet"
+  },
+  "result": {
+    "item": "overworld_reforged:wooden_hammer"
+  },
+  "template": {
+    "item": "overworld_reforged:hammer_upgrade_smithing_template"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "overworld_reforged:block/large_overthium_crystal",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "overworld_reforged:block/large_overthium_crystal",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "overworld_reforged:block/large_overthium_crystal",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "overworld_reforged:block/large_overthium_crystal",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "overworld_reforged:block/large_overthium_crystal"
+    },
+    "facing=west": {
+      "model": "overworld_reforged:block/large_overthium_crystal",
+      "x": 90,
+      "y": 270
+    }
+  }
+}
